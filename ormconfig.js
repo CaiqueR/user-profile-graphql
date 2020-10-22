@@ -9,7 +9,7 @@ module.exports = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
-  entities: [`${__dirname}/src/entities/**/*.${env === 'development' ? 'ts' : 'js'}`],
+  entities: [env === 'development' ? `${__dirname}/src/entities/**/*.ts` : `${__dirname}/dist/src/entities/**/*.js`],
   logging: true,
   synchronize: false,
   pool: { min: 2, max: 10 },
@@ -19,7 +19,7 @@ module.exports = {
       rejectUnauthorized: false,
     },
   },
-  migrations: [`migration/*.${env === 'development' ? 'ts' : 'js'}`],
+  migrations: [env === 'development' ? 'migration/*.ts' : 'dist/migration/*.js'],
   cli: {
     migrationsDir: 'migration',
   },
