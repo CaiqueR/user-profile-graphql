@@ -7,6 +7,7 @@ import {
 } from './schema';
 import { ProfilesListAction } from './entities/Profiles';
 import { UsersListAction } from './entities/Users';
+import { context } from './context';
 
 const schema = makeExecutableSchema({
   typeDefs: [mutationTypeDefs, profileTypeDefs, queryTypeDefs, usersTypeDefs],
@@ -15,6 +16,7 @@ const schema = makeExecutableSchema({
 
 const server = new ApolloServer({
   schema,
+  context,
   introspection: true,
   playground: true,
 });

@@ -2,6 +2,9 @@ export const mutationTypeDefs = `
 type Mutation {
   # Virgula opcional
   # Mutations de User
+
+  registerUser(data: UserRegisterInput!): User!
+  
   newUser(
       data: UserInput!
   ): User!

@@ -5,6 +5,7 @@ type User {
   email: String!
   active: Boolean!
   profiles: [Profile]
+  token: String
 }
 
 input UserInput {
@@ -12,6 +13,17 @@ input UserInput {
   email: String
   password: String
   profiles: [ProfileFilter]
+}
+
+input UserRegisterInput {
+  name: String!
+  email: String!
+  password: String!
+}
+
+input UserLoginInput{
+  email: String!
+  password: String!
 }
 
 input UserFilter {

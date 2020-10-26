@@ -1,5 +1,6 @@
 export const queryTypeDefs = `
 type Query {
+  login(data: UserLoginInput!): User
   users: [User]
   user(filter: UserFilter!): User
   profiles: [Profile]
